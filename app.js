@@ -15,7 +15,7 @@ app.get('/health', async () => {
 app.get('/', async () => {
   return {
     name: 'JobSearch API',
-    description: 'Powered by Linkup. Search for jobs and companies.',
+    description: 'Powered by Linkup. Search for jobs and companies. - Alex',
     endpoints: [
       'GET  /health',
       'GET  /api/jobs?query=<role>&location=<location>',
@@ -124,7 +124,9 @@ const start = async () => {
   }
 };
 
-if (process.argv[1] === new URL(import.meta.url).pathname) {
+import { resolve } from 'path';
+import { fileURLToPath } from 'url';
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   start();
 }
 export { app };
