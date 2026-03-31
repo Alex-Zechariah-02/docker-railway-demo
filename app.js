@@ -69,7 +69,6 @@ app.get('/api/jobs', async (request, reply) => {
       query: searchQuery,
       count: 0,
       results: results.map(r => ({
-        title: r.name,
         url: r.url,
         snippet: r.content?.slice(0, 300),
       })),
